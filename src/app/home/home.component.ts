@@ -24,13 +24,30 @@ export class HomeComponent implements OnInit {
     private router:Router, private http: HttpClient) { }
     
 
+   // ngOnInit() {
+    //   this.apiService.getApiData().subscribe(data=>{
+    //     this.fetchDetails= data;
+    //     this.mapped = Object.keys(this.fetchDetails).map(key => ({type: key, value: this.fetchDetails[key]}));
+    //     console.log(this.mapped);
+    //   });
+    // }
+
     ngOnInit() {
-      this.apiService.getApiData().subscribe(data=>{
+      this.http.get('https://www.anapioficeandfire.com/api/').subscribe(data=>{
         this.fetchDetails= data;
-        this.mapped = Object.keys(this.fetchDetails).map(key => ({type: key, value: this.fetchDetails[key]}));
+        this.mapped = Object.keys(this.fetchDetails).map(key => ({type: key, value: this.fetchDetails[key],data:[]}));
+          for(let i=0;i<this.mapped.length; i++)
+          {
+            this.http.get(this.mapped[i].value).subscribe(data=>{
+              let gameAsset=data;
+              console.log(gameAsset);
+              this.mapped[i].data=gameAsset;
+              console.log(this.mapped)
+            })
+          }
+        
         console.log(this.mapped);
       });
-    }
 // fetchBookInfo(selectedBook){
 //   this.apiService.getApiData("books/" + selectedBook).subscribe(data=>{
 //     this.fetchBookSpecificData= data;
