@@ -1,0 +1,46 @@
+<!-- <div class="card top-div" *ngFor="let data of mapped; let i=index">
+  <img class="card-imp-top card-image" src="/assets/images/bookstack.png" alt="card imag cap">
+  <div class="card-body">
+    <h5 class="card-title">{{data.type}}</h5>
+    <a class="btn btn-primary" (click)="fetchBookInfo(i+1)">Book Info</a>
+  </div>
+</div> -->
+
+<!-- <div class="container" style="text-align:center">
+  <div class="col-md-12" style="font-size:22px">All Cards</div>
+  <br><br><br><br>
+  </div>
+  <div class="row" style="text-align:center">
+  
+  <div *ngFor="let data of mapped" class="col-md-4">
+    <div class="pannel panel-default">
+      <div class="panel-heading">{{data.type}}</div>
+      <div class="panel-body">
+        <p>{{data.value}}</p>
+      </div>
+    </div>
+  </div>
+  </div> -->
+
+<div class="container" style="text-align:center">
+  <div class="col-md-12" style="font-size:22px">All Cards</div>
+  <br><br><br><br>
+</div>
+<div class="row" style="text-align:center">
+
+  <div class="card top-div" *ngFor="let data of mapped; let i=index" class="col-md-4" >
+
+    <div class="card-body">
+      <h3 class="card-title">{{data.type | uppercase}}</h3>
+      <a class="btn btn-primary" (click)="fetchList(i)">List of {{data.type}}</a>
+      <ul *ngIf = "selectedIndex==i">
+        <li  *ngFor="let list of details">
+            <a (click)="fetchBookInfo(i+1)">
+              
+          {{list.name}}
+        </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
