@@ -32,13 +32,12 @@
 
     <div class="card-body">
       <h3 class="card-title">{{data.type | uppercase}}</h3>
-      <a class="btn btn-primary" (click)="fetchList(i)">List of {{data.type}}</a>
-      <ul *ngIf = "selectedIndex==i">
-        <li  *ngFor="let list of details">
-            <a (click)="fetchBookInfo(i+1)">
-              
-          {{list.name}}
-        </a>
+      <ul>
+        <li *ngFor = "let data of data.data">
+            <a  (click)="fetchBookInfo(i)">
+              {{data.name}}
+              </a>
+        
         </li>
       </ul>
     </div>
