@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiServiceService } from '../api-service.service';
+
 
 @Component({
   selector: 'app-details',
@@ -6,10 +8,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./details.component.css']
 })
 export class DetailsComponent implements OnInit {
+  fetchDetail: any;
 
-  constructor() { }
+  constructor(private apiService: ApiServiceService) { }
 
   ngOnInit() {
-  }
 
+   this.fetchDetail = this.apiService.getCategorySpecificData();
+   console.log(this.fetchDetail);
+
+}
 }

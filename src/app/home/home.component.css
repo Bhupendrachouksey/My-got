@@ -1,0 +1,36 @@
+ /* .card-image{
+    height: 160px;
+    background-color: red;
+    
+}
+.top-div{
+    width: 18rem;
+    display: inline-block;
+    margin:10px;
+    background-color: azure;
+}
+
+.card {
+    
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+  }
+  
+  
+  .card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+  
+   */
+
+  .book-background{
+      border: red solid 10px;
+  }
+  
+  .character-background{
+    border: blue solid 10px;
+}
+
+.houses-background{
+    border: green solid 10px;
+}

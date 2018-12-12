@@ -1,45 +1,27 @@
-<!-- <div class="card top-div" *ngFor="let data of mapped; let i=index">
-  <img class="card-imp-top card-image" src="/assets/images/bookstack.png" alt="card imag cap">
-  <div class="card-body">
-    <h5 class="card-title">{{data.type}}</h5>
-    <a class="btn btn-primary" (click)="fetchBookInfo(i+1)">Book Info</a>
-  </div>
-</div> -->
-
-<!-- <div class="container" style="text-align:center">
-  <div class="col-md-12" style="font-size:22px">All Cards</div>
-  <br><br><br><br>
-  </div>
-  <div class="row" style="text-align:center">
-  
-  <div *ngFor="let data of mapped" class="col-md-4">
-    <div class="pannel panel-default">
-      <div class="panel-heading">{{data.type}}</div>
-      <div class="panel-body">
-        <p>{{data.value}}</p>
-      </div>
-    </div>
-  </div>
-  </div> -->
-
 <div class="container" style="text-align:center">
   <div class="col-md-12" style="font-size:22px">All Cards</div>
   <br><br><br><br>
 </div>
 <div class="row" style="text-align:center">
 
-  <div class="card top-div" *ngFor="let data of mapped; let i=index" class="col-md-4" >
+  <div class="col-md-4" [ngClass]="getGameElement(i)" *ngFor="let data of mapped; let i=index">
 
-    <div class="card-body">
-      <h3 class="card-title">{{data.type | uppercase}}</h3>
-      <ul>
-        <li *ngFor = "let data of data.data">
-            <a  (click)="fetchBookInfo(i)">
-              {{data.name}}
-              </a>
-        
-        </li>
-      </ul>
+    
+    <div class="panel panel-default">
+
+      <h3 class="panel-heading">{{data.type | uppercase}}</h3>
+      <div class="panel-body">
+        <ul>
+          <li *ngFor="let metaData of data.data | orderBy" (click)="getCategoryDetails(metaData)">
+
+            {{metaData.name}}
+
+          </li>
+        </ul>
+      </div>
+
     </div>
+
   </div>
-</div>
+  </div>
+  

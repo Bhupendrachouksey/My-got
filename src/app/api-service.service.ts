@@ -6,15 +6,19 @@ import { environment } from '../environments/environment'
   providedIn: 'root'
 })
 export class ApiServiceService {
-  apiEndpoint = environment.apiEndpoint;
+	fetchSpecificData:any;
 
     constructor(private http: HttpClient){
 
     }
-    getApiData(){
-        return this.http.get(this.apiEndpoint);
+    setCategorySpecificData(getSpecificData){
+       this.fetchSpecificData = getSpecificData;
 
     }
+	
+	 getCategorySpecificData(){
+      return this.fetchSpecificData;
 
+    }
   
 }

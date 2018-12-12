@@ -1,3 +1,19 @@
-<p>
-  details works!
-</p>
+<table *ngIf="fetchDetail">
+  <tr>
+    <th>Name: </th>
+    <td>{{fetchDetail.name}}</td>
+  </tr>
+  <tr>
+      <th>Authors: </th>
+      <td>{{fetchDetail.authors}}</td>
+    </tr><tr>
+        <th>Country: </th>
+        <td>{{fetchDetail.country}}</td>
+      </tr><tr>
+          <th>Publisher: </th>
+          <td>{{fetchDetail.publisher}}</td>
+        </tr><tr>
+            <th>Media: </th>
+            <td>{{fetchDetail.mediaType}}</td>
+          </tr>
+          </table>

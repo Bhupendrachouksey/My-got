@@ -8,13 +8,15 @@ import { HomeComponent } from './home/home.component';
 //import { RouterModule, Routes } from '@angular/router'
 import { DetailsComponent } from './details/details.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { OrderByPipe } from './order-by.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     DetailsComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    OrderByPipe
   ],
   imports: [
     BrowserModule,
