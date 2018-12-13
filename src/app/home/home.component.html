@@ -14,7 +14,7 @@
         <ul>
           <li *ngFor="let metaData of data.data | orderBy" (click)="getCategoryDetails(metaData)">
 
-            {{metaData.name}}
+            <a>{{metaData.name}}</a>
 
           </li>
         </ul>

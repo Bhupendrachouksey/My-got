@@ -38,7 +38,7 @@ export class HomeComponent implements OnInit {
     this.http.get(data.url).subscribe(data=>{
       let fetchSpecificData= data;
 	  this.apiService.setCategorySpecificData(fetchSpecificData);
-	   this.router.navigate(['/category']);
+	   this.router.navigate(['/details']);
    });
   }
 
